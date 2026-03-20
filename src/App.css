@@ -1,3 +1,13 @@
-.body {
-  color: black;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  color: white;
+  background-color: black;
+}
+
+input {
+  color: black
 }
