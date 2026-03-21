@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   color: white;
   background-color: black;
 }
 
 input {
-  color: black
+  color: black;
+}
+
+.hero-overlay {
+  background: linear-gradient(to top, rgba(15, 17, 21, 0.9), transparent);
+}
+
+.search-box {
+  backdrop-filter: blur(10px);
 }
