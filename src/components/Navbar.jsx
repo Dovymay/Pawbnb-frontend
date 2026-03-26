@@ -9,7 +9,7 @@ const Navbar = () => {
   const { handleLogout, isLoggedIn } = useContext(AuthContext);
 
   return (
-    <nav className="sticky top-0 flex items-center justify-between px-8 py-1 h-12 bg-background shadow-sm">
+    <nav className="sticky top-0 flex items-center justify-between px-8 py-1 h-14 bg-background shadow-sm">
       <Link to="/">
         <img
           src={logo}

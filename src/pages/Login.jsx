@@ -28,12 +28,16 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="grid grid-cols-6  justify-center">
+      <h1 className="text-white text-3xl font-bold mb-10 mt-5 flex align-center justify-center">
+        Login
+      </h1>
       <form onSubmit={handleLogin}>
         <label>
           Email:
           <input
+            className="bg-surfaceLight text-textPrimary px-4 py-2 rounded-xl"
+            placeholder="example@email.com"
             type="email"
             value={email}
             onChange={(e) => {
@@ -45,6 +49,8 @@ const Login = () => {
         <label>
           Password:
           <input
+            className="bg-surfaceLight text-textPrimary px-4 py-2 rounded-xl"
+            placeholder="************"
             type="password"
             value={password}
             onChange={(e) => {

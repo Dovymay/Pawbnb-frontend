@@ -63,7 +63,9 @@ const Signup = () => {
             }}
           />
         </label>
-        <button>Sign up!</button>
+        <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-4 py-1 mt-3">
+          Sign up!
+        </button>
       </form>
     </div>
   );

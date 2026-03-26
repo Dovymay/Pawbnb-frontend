@@ -5,6 +5,11 @@
 body {
   color: white;
   background-color: black;
+   background: url('../src/assets/background.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 input {
@@ -17,4 +22,21 @@ input {
 
 .search-box {
   backdrop-filter: blur(10px);
+}
+
+.petStayCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 7px 20px 20px;
+  width: 21vw;
+  border: 5px red;
+}
+
+.petStayImage {
+  width: 30vw;
+  height: 30vh;
+  object-fit: contain;
+  align-items: center;
 }
