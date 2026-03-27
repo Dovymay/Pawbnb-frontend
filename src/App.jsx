@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import ProtectedRoute from '../src/components/ProtectedRoute';
+import AllListingsPage from './pages/AllListingsPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
+        <Route path="/all-listings" element={<AllListingsPage />} />
         <Route path="onestay/:id" element={<PetStayDetailsPage />} />
         <Route path="signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

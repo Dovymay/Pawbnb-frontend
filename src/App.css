@@ -5,7 +5,7 @@
 body {
   color: white;
   background-color: black;
-   background: url('../src/assets/background.jpg') no-repeat center center fixed; 
+  background: url('../src/assets/background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -39,4 +39,23 @@ input {
   height: 30vh;
   object-fit: contain;
   align-items: center;
+}
+
+.section {
+  margin-top: 3vh;
+  padding: 0 5vh;
+  margin-bottom: 3vh;
+}
+
+.title {
+  font-size: 4vh;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
 }
