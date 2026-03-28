@@ -10,19 +10,20 @@ import { Routes, Route } from 'react-router-dom';
 import ProtectedRoute from '../src/components/ProtectedRoute';
 import AllListingsPage from './pages/AllListingsPage';
 import Footer from './components/Footer';
+import Location from './components/Location';
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main classname="flex-grow">
+      <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/all-listings" element={<AllListingsPage />} />
-          <Route path="/location/:city"/>
-          <Route path="onestay/:id" element={<PetStayDetailsPage />} />
-          <Route path="signup" element={<Signup />} />
+          <Route path="/location/:city" element={<Location />} />
+          <Route path="/onestay/:id" element={<PetStayDetailsPage />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/profile"

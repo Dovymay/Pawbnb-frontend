@@ -16,7 +16,6 @@ function PetStayDetailsPage() {
     details();
   }, [id]);
 
-
   console.log(petStay);
 
   if (!petStay) {
@@ -26,7 +25,6 @@ function PetStayDetailsPage() {
   return (
     <div className="p-10">
       <div className="petStayCard bg-white shadow-lg p-6 rounded-2xl">
-        {/* Use Optional Chaining ?. just in case */}
         <img
           src={petStay.image}
           alt={petStay.title}
@@ -34,9 +32,8 @@ function PetStayDetailsPage() {
         />
         <h2 className="text-2xl text-black font-bold mt-4">{petStay.title}</h2>
         <p className="text-gray-600">{petStay.location}</p>
-        {/* Check if your backend uses 'price' or 'pricePerNight'!! */}
         <p className="font-bold text-teal-600">
-          ${petStay.price || petStay.pricePerNight} / night
+          ${petStay.pricePerNight} / night
         </p>
       </div>
     </div>

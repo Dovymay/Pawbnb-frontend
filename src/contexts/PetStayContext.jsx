@@ -6,6 +6,7 @@ const PetStayContext = createContext();
 const PetStayWrapper = ({ children }) => {
   const [petStays, setPetStays] = useState([]);
   const [featuredStays, setFeaturedStays] = useState([]);
+  const [filteredStays, setFilteredStays] = useState([]);
 
   //1. Fetch All PetStays
   const fetchAllStays = async () => {
@@ -35,6 +36,20 @@ const PetStayWrapper = ({ children }) => {
     }
   };
 
+  //1.2 Fetch Filtered stays
+  const fetchFilteredStays = async (city) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:5005/petstays/location/${city}`
+      );
+      setFilteredStays(response.data);
+      return response.data;
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     fetchAllStays();
     fetchFeaturedStays();
@@ -55,9 +70,12 @@ const PetStayWrapper = ({ children }) => {
       value={{
         petStays,
         featuredStays,
+        filteredStays,
         setPetStays,
+        setFilteredStays,
         fetchAllStays,
         fetchFeaturedStays,
+        fetchFilteredStays,
         fetchSingleStay,
       }}
     >

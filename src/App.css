@@ -82,9 +82,9 @@ input {
   margin-bottom: 3vh;
 }
 
-.custom-datepicker-container {
+/* .custom-datepicker-container {
   z-index: 9999;
-}
+} */
 
 /* Login and Sign up form */
 .login-label {
@@ -108,4 +108,21 @@ input {
   margin-top: 1px;
   border: none;
   outline: none;
+}
+
+/* Location CSS */
+.location-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-image {
+  height: 20rem;
+  width: 32rem;
+  border-radius: 16px;
+}
+
+.location-image:hover {
+  transform: scale(1.05);
 }

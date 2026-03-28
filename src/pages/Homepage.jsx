@@ -2,8 +2,11 @@ import Hero from '../components/Hero';
 import { PetStayContext } from '../contexts/PetStayContext';
 import { useContext, useState, useEffect } from 'react';
 import PetStayCard from '../components/PetStayCard';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import WhyChooseUs from '../components/WhyChooseUs';
+import amsterdam from '../assets/Amsterdam.jpg';
+import rotterdam from '../assets/Rotterdam.jpg';
+import utrecht from '../assets/Utrecht.jpg';
 
 const Homepage = () => {
   const { featuredStays } = useContext(PetStayContext);
@@ -30,6 +33,30 @@ const Homepage = () => {
               Explore More🐾
             </button>
           </Link>
+        </div>
+        <hr className="mt-5 w-xl border-gray-500 dark:border-neutral-500 border-1" />
+      </section>
+
+      <section className="section">
+        <h2 className="flex justify-center title-3">Explore by location</h2>
+        <div className="flex justify-center">
+          <div className="flex justify-center w-screen gap-8">
+            <div className="">
+              <Link to={`/location/Amsterdam`}>
+                <img src={amsterdam} className="location-image" />
+              </Link>
+            </div>
+            <div className="">
+              <Link to={`/location/Rotterdam`}>
+                <img src={rotterdam} className="location-image" />
+              </Link>
+            </div>
+            <div className="">
+              <Link to={`/location/Utrecht`}>
+                <img src={utrecht} className="location-image" />
+              </Link>
+            </div>
+          </div>
         </div>
         <hr className="mt-5 w-xl border-gray-500 dark:border-neutral-500 border-1" />
       </section>
