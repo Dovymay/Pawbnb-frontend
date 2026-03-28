@@ -16,7 +16,7 @@ const CustomDatePicker = () => {
       selectsRange={true}
       isClearable={true}
       placeholderText="Check in - Check out"
-      className="bg-surfaceLight text-textPrimary px-4 py-2 rounded-xl outline-none w-full"
+      className="bg-surfaceLight text-textPrimary px-4 py-2 rounded-xl outline-none w-full test"
     />
   );
 };

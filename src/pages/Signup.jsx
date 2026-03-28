@@ -4,13 +4,16 @@ import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('');
+  const [avatar, setAvatar] = useState('');
   const nav = useNavigate();
 
   async function handleSignup(e) {
     e.preventDefault();
-    const userToSignup = { username, email, password };
+    const userToSignup = { username, name, email, password, role, avatar };
 
     try {
       const createdUser = await axios.post(
@@ -26,47 +29,94 @@ const Signup = () => {
 
   return (
     <div>
-      <h1>Sign up with us</h1>
-      <form onSubmit={handleSignup}>
-        <label>
-          Username:
-          <input
-            className="text-black"
-            type="text"
-            value={username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-          />
-        </label>
+      <div className="flex justify-center items-center min-h-screen gap-6 my-4">
+        <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">
+          <h1 className="font-bold text-center text-xl mb-4">
+            Sign up with us
+          </h1>
+          <div>
+            <form className="flex flex-col gap-4" onSubmit={handleSignup}>
+              <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">
+                <label className="my-0 login-label">
+                  Username:
+                  <input
+                    className="my-0 login-input"
+                    type="text"
+                    value={username}
+                    onChange={(e) => {
+                      setUsername(e.target.value);
+                    }}
+                  />
+                </label>
+                <label className="login-label">
+                  Name:
+                  <input
+                    className="login-input"
+                    type="text"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                  />
+                </label>
 
-        <label>
-          Email:
-          <input
-            className="text-black"
-            type="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-          />
-        </label>
+                <label className="login-label">
+                  Email:
+                  <input
+                    className="login-input"
+                    type="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                  />
+                </label>
+              </div>
 
-        <label>
-          Password:
-          <input
-            className="text-black"
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </label>
-        <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-4 py-1 mt-3">
-          Sign up!
-        </button>
-      </form>
+              <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">
+                <label className="login-label">
+                  Password:
+                  <input
+                    className="login-input"
+                    type="password"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+                </label>
+                <label className="login-label">
+                  Role:
+                  <input
+                    className="login-input"
+                    type="text"
+                    value={role}
+                    onChange={(e) => {
+                      setRole(e.target.value);
+                    }}
+                  />
+                </label>
+                <label className="login-label">
+                  Image:
+                  <input
+                    className="login-input"
+                    type="text"
+                    value={avatar}
+                    placeholder="Add image url"
+                    onChange={(e) => {
+                      setAvatar(e.target.value);
+                    }}
+                  />
+                </label>
+              </div>
+
+              <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-2 py-4 mt-3">
+                Sign up!
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
