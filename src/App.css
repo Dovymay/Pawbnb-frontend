@@ -41,6 +41,8 @@ input {
   align-items: center;
 }
 
+/* Homepage and Featured list styling */
+
 .section {
   margin-top: 3vh;
   padding: 0 5vh;
@@ -58,4 +60,24 @@ input {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
+}
+
+.title-2 {
+  font-size: 3vh;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: #fff;
+}
+
+.title-3 {
+  font-size: 3vh;
+  font-weight: 500;
+  margin-bottom: 32px;
+  color: #fff;
+}
+
+.section-host {
+  margin-top: 3vh;
+  padding: 0 5vh;
+  margin-bottom: 3vh;
 }
