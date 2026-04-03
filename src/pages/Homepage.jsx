@@ -29,7 +29,7 @@ const Homepage = () => {
 
         <div className="flex justify-center">
           <Link to="/all-listings">
-            <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-8 py-3 mt-5 mb-0">
+            <button className="bg-primary/70 hover:bg-primary/100 text-white rounded-xl px-8 py-3 mt-5 mb-0">
               Explore More🐾
             </button>
           </Link>
@@ -38,23 +38,26 @@ const Homepage = () => {
       </section>
 
       <section className="section">
-        <h2 className="flex justify-center title-3">Explore by location</h2>
+        <h2 className="flex justify-center title-2">Explore by location</h2>
         <div className="flex justify-center">
           <div className="flex justify-center w-screen gap-8">
-            <div className="">
+            <div className="location-card">
               <Link to={`/location/Amsterdam`}>
                 <img src={amsterdam} className="location-image" />
               </Link>
+              <p>Amsterdam</p>
             </div>
-            <div className="">
+            <div className="location-card">
               <Link to={`/location/Rotterdam`}>
                 <img src={rotterdam} className="location-image" />
               </Link>
+              <p>Roterdam</p>
             </div>
-            <div className="">
+            <div className="location-card">
               <Link to={`/location/Utrecht`}>
                 <img src={utrecht} className="location-image" />
               </Link>
+              <p>Utrecth</p>
             </div>
           </div>
         </div>
@@ -69,7 +72,7 @@ const Homepage = () => {
         </div>
         <div className="flex justify-center">
           <Link to="/host">
-            <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-8 py-3 mb-0">
+            <button className="bg-primary/70 hover:bg-primary/100 text-white rounded-xl px-8 py-3 mb-0">
               List Your Place🐾
             </button>
           </Link>

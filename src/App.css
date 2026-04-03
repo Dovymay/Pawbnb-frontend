@@ -64,14 +64,14 @@ input {
 
 .title-2 {
   font-size: 3vh;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 32px;
   color: #fff;
 }
 
 .title-3 {
   font-size: 3vh;
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 32px;
   color: #fff;
 }
@@ -117,12 +117,34 @@ input {
   align-items: center;
 }
 
-.location-image {
-  height: 20rem;
-  width: 32rem;
+.location-card {
+  color: white;
+  background-color: #2a2f3a;
   border-radius: 16px;
+  margin-bottom: 2vh;
+  height: 18rem;
+}
+.location-image {
+  height: 16rem;
+  width: 32rem;
+  border-radius: 16px 16px 0px 0px;
 }
 
-.location-image:hover {
+.location-card p {
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+}
+.location-card:hover {
+  transform: scale(1.05);
+}
+
+.why-image {
+  border-radius: 16px;
+  margin-bottom: 2vh;
+  height: 18rem;
+  width: 29rem;
+}
+.why-image:hover {
   transform: scale(1.05);
 }

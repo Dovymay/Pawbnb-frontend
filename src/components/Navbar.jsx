@@ -9,7 +9,7 @@ const Navbar = () => {
   const { handleLogout, isLoggedIn } = useContext(AuthContext);
 
   return (
-    <nav className="sticky top-0 z-9999 flex items-center justify-between px-8 py-1 h-14 bg-background shadow-sm">
+    <nav className="sticky top-0 z-9999 flex items-center justify-between px-8 py-1 h-14 bg-background/80 shadow-sm">
       <Link to="/">
         <img
           src={logo}
@@ -41,19 +41,19 @@ const Navbar = () => {
       ) : (
         <div className="flex items-center gap-4">
           <Link to="login">
-            <button className="bg-border/0 hover:bg-primary/80 text-white rounded-xl px-4 py-1 mt-3">
+            <button className="bg-border/0 hover:bg-primary/80 text-white rounded-xl px-4 py-1 mt-2">
               Login
             </button>
           </Link>
 
           <Link to="signup">
-            <button className="bg-border/0 hover:bg-primary/80 text-white rounded-xl px-4 py-1 mt-3">
+            <button className="bg-border/0 hover:bg-primary/80 text-white rounded-xl px-4 py-1 mt-2">
               Sign up
             </button>
           </Link>
 
           <Link to="/host">
-            <button className="bg-primary hover:bg-border/80 text-white rounded-xl px-6 py-1 mt-3">
+            <button className="bg-primary/70 hover:bg-primary/100 text-white rounded-xl px-6 py-1 mt-2">
               Become a host🐾
             </button>
           </Link>

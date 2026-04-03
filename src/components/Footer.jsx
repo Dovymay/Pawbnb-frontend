@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="flex items-center justify-between px-8 bg-background mt-auto">
-      <div className='mt-1 mb-1'>
+      <div className="mt-1 mb-1">
         <img
           src={logo}
           alt="Pawbnb"
@@ -28,6 +28,7 @@ const Footer = () => {
           <a
             href="https://www.linkedin.com/in/dovydas-majauskas-a98946259"
             target="_blank"
+            rel="noopener noreferrer"
             className="GitHUB-icon"
           >
             <img
@@ -38,8 +39,9 @@ const Footer = () => {
           </a>
 
           <a
-            href='href="https://github.com/Dovymay/'
+            href="https://www.github.com/Dovymay"
             target="_blank"
+            rel="noopener noreferrer"
             className="GitHUB-icon"
           >
             <img

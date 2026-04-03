@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const PetStayContext = createContext();
 
@@ -8,6 +9,26 @@ const PetStayWrapper = ({ children }) => {
   const [featuredStays, setFeaturedStays] = useState([]);
   const [filteredStays, setFilteredStays] = useState([]);
 
+  //Search States
+  const [searchQuery, setSearchQuery] = useState({
+    city: '',
+    startDate: null,
+    endDate: null,
+  });
+  const [activeSearch, setActiveSearch] = useState({
+    city: '',
+    startDate: null,
+    endDate: null,
+  });
+  const nav = useNavigate();
+
+  //Search Trigger Function
+  const triggerSearch = () => {
+    setActiveSearch(searchQuery);
+    nav('/results');
+  };
+
+  //Fetch Functions
   //1. Fetch All PetStays
   const fetchAllStays = async () => {
     try {
@@ -55,7 +76,7 @@ const PetStayWrapper = ({ children }) => {
     fetchFeaturedStays();
   }, []);
 
-  //   2. Fetch a single petStay
+  //2. Fetch A Single PetStay
   const fetchSingleStay = async (id) => {
     try {
       const response = await axios.get(`http://localhost:5005/petstays/${id}`);
@@ -69,9 +90,14 @@ const PetStayWrapper = ({ children }) => {
     <PetStayContext.Provider
       value={{
         petStays,
+        searchQuery,
+        activeSearch,
         featuredStays,
         filteredStays,
         setPetStays,
+        setSearchQuery,
+        setActiveSearch,
+        triggerSearch,
         setFilteredStays,
         fetchAllStays,
         fetchFeaturedStays,

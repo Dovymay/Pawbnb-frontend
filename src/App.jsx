@@ -11,6 +11,8 @@ import ProtectedRoute from '../src/components/ProtectedRoute';
 import AllListingsPage from './pages/AllListingsPage';
 import Footer from './components/Footer';
 import Location from './components/Location';
+import SearchResultsPage from './pages/SearchResultsPage';
+import BookingPage from './pages/BookingPage';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/all-listings" element={<AllListingsPage />} />
+          <Route path="/results" element={<SearchResultsPage />} />
+          <Route path="/bookingpage" element={<BookingPage />} />
           <Route path="/location/:city" element={<Location />} />
           <Route path="/onestay/:id" element={<PetStayDetailsPage />} />
           <Route path="/signup" element={<Signup />} />

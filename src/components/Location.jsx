@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { PetStayContext } from '../contexts/PetStayContext';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import PetStayCard from './PetStayCard';
 
 const Location = () => {
