@@ -32,6 +32,11 @@ function SearchResultsPage() {
   //     !activeSearch?.city ||
   //     stay.location.toLowerCase().includes(activeSearch.city.toLowerCase())
   // );
+  if (!searchResults) {
+    return (
+      <div className="p-20 text-center">Loading Pawbnb Search Results...</div>
+    );
+  }
 
   return (
     <div>
