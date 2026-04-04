@@ -7,6 +7,7 @@ const AuthContext = createContext();
 const AuthWrapper = ({ children }) => {
   //States to control the current User
   const [currentUser, setCurrentUser] = useState(null);
+  const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -29,6 +30,7 @@ const AuthWrapper = ({ children }) => {
         headers: { Authorization: `Bearer ${theToken}` },
       });
 
+      setToken(theToken);
       setIsLoading(false);
       setIsLoggedIn(true);
       setCurrentUser(data);
@@ -38,6 +40,7 @@ const AuthWrapper = ({ children }) => {
       setIsLoading(false);
       setIsLoggedIn(false);
       setCurrentUser(null);
+      setToken(null);
       //Redirect if WHOLE app is to be private
       //   nav('/login');
     }
@@ -46,7 +49,9 @@ const AuthWrapper = ({ children }) => {
   //Logout function that deletes token from lStorage and navs to login
   function handleLogout() {
     localStorage.removeItem('authToken');
-    setIsLoggedIn(false)
+    setIsLoggedIn(false);
+    setCurrentUser(null);
+    setToken(null);
     nav('/login');
   }
 
@@ -58,6 +63,7 @@ const AuthWrapper = ({ children }) => {
     <AuthContext.Provider
       value={{
         currentUser,
+        token,
         isLoading,
         isLoggedIn,
         authenticateUser,

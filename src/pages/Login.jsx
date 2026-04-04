@@ -21,9 +21,11 @@ const Login = () => {
       console.log('Success!', res.data);
       localStorage.setItem('authToken', res.data.authToken);
       await authenticateUser();
+      alert('Logged in!');
       nav('/profile');
     } catch (error) {
       console.log('Login error:', error.message);
+      alert('Authentication failed!');
     }
   }
 

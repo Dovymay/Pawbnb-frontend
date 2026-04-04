@@ -12,9 +12,9 @@ body {
   background-size: cover;
 }
 
-input {
+/* input {
   color: black;
-}
+} */
 
 .hero-overlay {
   background: linear-gradient(to top, rgba(15, 17, 21, 0.9), transparent);
@@ -99,7 +99,8 @@ input {
 
 .login-input {
   background-color: #3c4752;
-  color: #1e293b;
+  color: white;
+  font: 200;
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 8px;
@@ -161,9 +162,20 @@ input {
 }
 
 .petStay-container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 40px 20px;
+}
+
+.details-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.details-main {
+  display: flex;
+  flex-direction: column;
 }
 
 .petStay-title h1 {
@@ -206,7 +218,7 @@ input {
   margin-top: 40px;
 }
 
-.petStay-price {
+/* .petStay-price {
   margin-top: 40px;
   padding: 20px;
   background: #1a1d24;
@@ -224,4 +236,11 @@ input {
 .price span {
   font-size: 14px;
   color: #a0a3ad;
+} */
+
+/* Booking-box CSS */
+
+.booking-box {
+  background: #1a1d24;
+  border-radius: 16px;
 }
