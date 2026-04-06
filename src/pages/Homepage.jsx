@@ -68,7 +68,7 @@ const Homepage = () => {
 
       <section className="section-host">
         <div className="flex justify-center">
-          <h2 className="title-3">Become a Host. Start earning with Pawbnb.</h2>
+          <h2 className="title-3">Become a Host. Start earning with Pawbnb</h2>
         </div>
         <div className="flex justify-center">
           <Link to="/host">

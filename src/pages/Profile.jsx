@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
+import MyBookings from './MyBookings';
 
 const Profile = () => {
   const [profileUser, setProfileUser] = useState(null);
@@ -33,19 +34,53 @@ const Profile = () => {
   }
 
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
-      <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md mx-auto">
-        <h1 className="text-3xl font-extrabold text-slate-800">
-          {profileUser.username} Profile
-        </h1>
-        <p className="text-slate-500 mt-2">Email: {profileUser.email}</p>
-        <div className="mt-6 p-4 bg-teal-50 rounded-lg border border-teal-100">
-          <p className="text-teal-700 font-medium">
-            🐾 Welcome back to Pawbnb!
-          </p>
+    <div className="profile-layout">
+      <div className="p-8  min-h-screen">
+        <div className="profile-main">
+          <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md mx-auto">
+            <div className="mt-6 p-4 bg-teal-50 rounded-lg border border-teal-100">
+              <p className="text-md font-bold text-slate-800">
+                🐾 Welcome back to Pawbnb, {profileUser.username}!
+              </p>
+            </div>
+            <p className="text-slate-500 mt-2">Email: {profileUser.email}</p>
+          </div>
+        </div>
+        <div className="bookings-div">
+          <MyBookings />
         </div>
       </div>
     </div>
   );
 };
 export default Profile;
+
+//   return (
+//     <div className="profile-layout">
+//       <div className="p-8 bg-gray-50 min-h-screen">
+//         <div className="profile-main">
+//           <div className="bg-white p-6 rounded-2xl shadow-lg max-w-md mx-auto">
+//             <div className="mt-6 p-4 bg-teal-50 rounded-lg border border-teal-100">
+//               <p className="text-teal-700 font-medium">
+//                 🐾 Welcome back {profileUser.username} to Pawbnb!
+//               </p>
+//             </div>
+//             <h1 className="text-3xl font-extrabold text-slate-800">
+//               {profileUser.username} Profile
+//             </h1>
+//             <p className="text-slate-500 mt-2">Email: {profileUser.email}</p>
+//             <div className="mt-6 p-4 bg-teal-50 rounded-lg border border-teal-100">
+//               <p className="text-teal-700 font-medium">
+//                 🐾 Welcome back to Pawbnb!
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+//         <div className="bookings-div">
+//           <MyBookings />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+// export default Profile;

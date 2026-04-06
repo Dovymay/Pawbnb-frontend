@@ -32,6 +32,10 @@ function BookingBox({ petStay }) {
 
   //Create booking
   const handleBooking = async () => {
+    if (!currentUser || !token) {
+      nav('/login');
+      alert('Please login to book the stay.');
+    }
     if (!startDate || !endDate) {
       alert('Please select dates!');
       return;
@@ -50,7 +54,6 @@ function BookingBox({ petStay }) {
           },
         }
       );
-      console.log('TOKEN:', token);
       alert('Booking succesful 🐾!');
       nav('/profile');
     } catch (error) {

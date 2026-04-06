@@ -244,3 +244,44 @@ body {
   background: #1a1d24;
   border-radius: 16px;
 }
+
+/* Bookings list CSS */
+
+.bookings-container {
+  display: grid;
+  background-color: white;
+  border-radius: 16px;
+  grid-template-columns:
+    160px /* image */
+    2fr /* title */
+    1fr /* id */
+    1.5fr /* from */
+    1.5fr /* till */
+    1fr /* price */
+    260px; /* actions */
+
+  align-items: center;
+  gap: 16px;
+
+  padding: 16px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  color: black;
+}
+
+.booking-image {
+  width: 140px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.booking-title {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.booking-actions-div {
+  display: flex;
+  gap: 8px;
+}

@@ -51,16 +51,6 @@ function PetStayDetailsPage() {
               <h1>About this stay</h1>
               <p>{petStay.description}</p>
             </div>
-            {/* <div className="petStay-price">
-          <p className="price">
-            €{petStay.pricePerNight} <span>/ night</span>
-          </p> 
-          <Link to="/bookingpage">
-            <button className="bg-primary/70 hover:bg-primary/100 text-white rounded-xl px-8 py-3 mt-5 mb-5">
-              Book now 🐾
-            </button>
-          </Link>
-        </div>  */}
           </div>
 
           <BookingBox petStay={petStay} />

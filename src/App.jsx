@@ -12,7 +12,7 @@ import AllListingsPage from './pages/AllListingsPage';
 import Footer from './components/Footer';
 import Location from './components/Location';
 import SearchResultsPage from './pages/SearchResultsPage';
-import BookingPage from './pages/BookingPage';
+import BookingDetailsPage from './pages/BookingDetailsPage';
 
 function App() {
   return (
@@ -24,7 +24,10 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/all-listings" element={<AllListingsPage />} />
           <Route path="/results" element={<SearchResultsPage />} />
-          <Route path="/bookingpage" element={<BookingPage />} />
+          <Route
+            path="/one-booking/booking/:id"
+            element={<BookingDetailsPage />}
+          />
           <Route path="/location/:city" element={<Location />} />
           <Route path="/onestay/:id" element={<PetStayDetailsPage />} />
           <Route path="/signup" element={<Signup />} />
