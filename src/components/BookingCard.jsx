@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
 
-//If bookings.length===0
-//No adventures planned yet! 🐾
-
-function BookingCard({ booking, handleDelete }) {
+function BookingCard({ booking }) {
   return (
     <div className="bookings-container">
       <img
@@ -14,6 +11,10 @@ function BookingCard({ booking, handleDelete }) {
       <h3 className="">
         <p className="booking-title">Title</p>
         {booking.petStay?.title}
+      </h3>
+      <h3 className="booking-location">
+        <p className="booking-title">City</p>
+        {booking.petStay?.location}
       </h3>
       <h3 className="booking-host">
         <p className="booking-title">Host</p>
@@ -37,6 +38,7 @@ function BookingCard({ booking, handleDelete }) {
             Update booking
           </button>
         </Link>
+        {/* Moved to BookingDetailsPage.jsx
         <button
           className="bg-red-500/70 hover:bg-red-500/100 text-white font-bold rounded-xl px-6 mt-2 mb-0"
           onClick={() => {
@@ -44,7 +46,7 @@ function BookingCard({ booking, handleDelete }) {
           }}
         >
           Cancel booking
-        </button>
+        </button> */}
       </div>
     </div>
   );

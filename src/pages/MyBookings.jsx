@@ -30,24 +30,25 @@ function MyBookings() {
     fetchAllBookings();
   }, [token]);
 
-  const handleDeleteBooking = async (id) => {
-    if (
-      window.confirm('Are you sure you want to cancel and delete this booking?')
-    ) {
-      try {
-        const response = await axios.delete(
-          `http://localhost:5005/bookings/delete/${id}`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
-        setBookings((prev) => prev.filter((booking) => booking._id !== id));
-        alert('Booking has been cancelled and deleted!');
-      } catch (error) {
-        console.log(error.message);
-      }
-    }
-  };
+  //Logic has been moved to BookingDetailsPage.jsx
+  // const handleDeleteBooking = async (id) => {
+  //   if (
+  //     window.confirm('Are you sure you want to cancel and delete this booking?')
+  //   ) {
+  //     try {
+  //       const response = await axios.delete(
+  //         `http://localhost:5005/bookings/delete/${id}`,
+  //         {
+  //           headers: { Authorization: `Bearer ${token}` },
+  //         }
+  //       );
+  //       setBookings((prev) => prev.filter((booking) => booking._id !== id));
+  //       alert('Booking has been cancelled and deleted!');
+  //     } catch (error) {
+  //       console.log(error.message);
+  //     }
+  //   }
+  // };
 
   return (
     <>
@@ -67,7 +68,8 @@ function MyBookings() {
               <BookingCard
                 key={booking._id}
                 booking={booking}
-                handleDelete={handleDeleteBooking}
+                //Delete logic moved to BookingDetailsPage.jsx
+                //handleDelete={handleDeleteBooking}
               />
             ))}
           </div>
