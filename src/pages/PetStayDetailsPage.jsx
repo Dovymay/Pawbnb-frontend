@@ -22,38 +22,39 @@ function PetStayDetailsPage() {
   }
 
   return (
-    <div className="petStay-details-page">
-      <div className="petStay-hero">
-        <img src={petStay.image} alt={petStay.title} />
-      </div>
-
-      <div className="petStay-container">
-        <div className="details-layout">
-          <div className="details-main">
-            <div className="petStay-title">
-              <h1>{petStay.title}</h1>
-              <p className="petStay-details-location">{petStay.location}</p>
-              <p className="rating">
-                ⭐ {petStay.rating || 0}
-                <span> ({petStay.reviews || 0} reviews)</span>
-              </p>
+    <div className="booking-page">
+      <div className="booking-page-container">
+        <div className="booking-page-details-layout">
+          <div className="details-page-main">
+            <div className="booking-page-image">
+              <img src={petStay.image} alt={petStay.title} />
             </div>
 
-            <div className="petStay-host-container">
+            <h2 className="stay-page-title">{petStay.title}</h2>
+            <p className="booking-page-location">{petStay.location}</p>
+
+            <p className="booking-page-rating">
+              ⭐ {petStay.rating || 0}
+              <span> ({petStay.reviews || 0} reviews)</span>
+            </p>
+
+            <div className="booking-page-host-container">
               <img src={petStay.host?.avatar} alt={petStay.host?.name} />
               <div>
-                <p className="petStay-host">Hosted by</p>
+                <p className="booking-page-host">Hosted by</p>
                 <h3>{petStay.host?.name}</h3>
               </div>
             </div>
 
-            <div className="petStay-description">
-              <h1>About this stay</h1>
+            <div className="booking-page-summary">
+              <h3>About this stay</h3>
               <p>{petStay.description}</p>
             </div>
           </div>
 
-          <BookingBox petStay={petStay} />
+          <div className="booking-edit-container">
+            <BookingBox petStay={petStay} />
+          </div>
         </div>
       </div>
     </div>
@@ -61,3 +62,42 @@ function PetStayDetailsPage() {
 }
 
 export default PetStayDetailsPage;
+
+//Old Hero Style Layout of PSDP
+{
+  /* <div className="petStay-details-page">
+  <div className="petStay-hero">
+    <img src={petStay.image} alt={petStay.title} />
+  </div>
+
+  <div className="petStay-container">
+    <div className="details-layout">
+      <div className="details-main">
+        <div className="petStay-title">
+          <h1>{petStay.title}</h1>
+          <p className="petStay-details-location">{petStay.location}</p>
+          <p className="rating">
+            ⭐ {petStay.rating || 0}
+            <span> ({petStay.reviews || 0} reviews)</span>
+          </p>
+        </div>
+
+        <div className="petStay-host-container">
+          <img src={petStay.host?.avatar} alt={petStay.host?.name} />
+          <div>
+            <p className="petStay-host">Hosted by</p>
+            <h3>{petStay.host?.name}</h3>
+          </div>
+        </div>
+
+        <div className="petStay-description">
+          <h1>About this stay</h1>
+          <p>{petStay.description}</p>
+        </div>
+      </div>
+
+      <BookingBox petStay={petStay} />
+    </div>
+  </div>
+</div>; */
+}
