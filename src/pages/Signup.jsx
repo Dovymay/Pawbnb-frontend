@@ -91,6 +91,7 @@ const Signup = () => {
                   <input
                     className="login-input"
                     type="text"
+                    placeholder="Role: user or host?"
                     value={role}
                     onChange={(e) => {
                       setRole(e.target.value);
