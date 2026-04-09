@@ -1,7 +1,6 @@
-import logo from '../assets/LogoPawbnbwhite.png';
+import logo from '../assets/LogoPawbnbwhite';
 import GitHUB from '../assets/GitHUBB.png';
 import linkedIn from '../assets/LinkedIn.png';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (

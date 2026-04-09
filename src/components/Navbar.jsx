@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import logo from '../assets/LogoPawbnbwhite.png';
+import logo from '../assets/LogoPawbnbwhite';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 

@@ -54,6 +54,7 @@ function BookingCard({ booking }) {
 
 export default BookingCard;
 
+//Card type styling
 // <div className="card">
 //   <div className="card-image-wrapper">
 //     <img src={booking.petStay?.image} alt={booking.petStay?.title} />
