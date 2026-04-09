@@ -1,4 +1,4 @@
-import logo from '../assets/LogoPawbnbwhite';
+import logo from '../assets/Logo.png';
 import GitHUB from '../assets/GitHUBB.png';
 import linkedIn from '../assets/LinkedIn.png';
 
