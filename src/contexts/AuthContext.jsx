@@ -16,13 +16,14 @@ const AuthWrapper = ({ children }) => {
   const nav = useNavigate();
 
   //Function to authenticate the token
-  const authenticateUser = async function () {
+  const authenticateUser = async () => {
     const theToken = localStorage.getItem('authToken');
     //If there is no token, just stop loading and say "not logged in"
     if (!theToken) {
-      setIsLoading(false);
-      setIsLoggedIn(false);
       setCurrentUser(null);
+      setIsLoggedIn(false);
+      setToken(null);
+      setIsLoading(false);
       return;
     }
 
@@ -44,6 +45,8 @@ const AuthWrapper = ({ children }) => {
       setToken(null);
       //Redirect if WHOLE app is to be private
       //   nav('/login');
+    } finally {
+      setIsLoading(false);
     }
   };
 
