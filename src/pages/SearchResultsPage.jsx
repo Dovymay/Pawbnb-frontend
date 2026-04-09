@@ -3,6 +3,7 @@ import { PetStayContext } from '../contexts/PetStayContext';
 import PetStayCard from '../components/PetStayCard';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config/config';
 
 function SearchResultsPage() {
   const { activeSearch } = useContext(PetStayContext);
@@ -13,10 +14,9 @@ function SearchResultsPage() {
     const fetchSearchResults = async () => {
       setResultsLoading(true);
       try {
-        const response = await axios.post(
-          'http://localhost:5005/petstays/search',
-          { activeSearch }
-        );
+        const response = await axios.post(`${API_URL}/petstays/search`, {
+          activeSearch,
+        });
         setSearchResults(response.data);
         console.log(response.data);
       } catch (error) {

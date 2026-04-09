@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
+import { API_URL } from '../config/config';
 
 function BookingDetailsPage() {
   const { id } = useParams();
@@ -23,12 +24,9 @@ function BookingDetailsPage() {
     if (token) {
       const fetchSingleBooking = async () => {
         try {
-          const response = await axios.get(
-            `http://localhost:5005/bookings/${id}`,
-            {
-              headers: { Authorization: `Bearer ${token}` },
-            }
-          );
+          const response = await axios.get(`${API_URL}/bookings/${id}`, {
+            headers: { Authorization: `Bearer ${token}` },
+          });
 
           setStartDateChange(formatDate(response.data.startDate));
           setEndDateChange(formatDate(response.data.endDate));
@@ -62,13 +60,9 @@ function BookingDetailsPage() {
         totalPrice: totalPriceChange,
       };
       try {
-        await axios.put(
-          `http://localhost:5005/bookings/${id}`,
-          updatedBooking,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
+        await axios.put(`${API_URL}/bookings/${id}`, updatedBooking, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
         nav('/profile');
       } catch (error) {
         console.log(error.response?.data);
@@ -83,7 +77,7 @@ function BookingDetailsPage() {
     ) {
       try {
         const response = await axios.delete(
-          `http://localhost:5005/bookings/delete/${id}`,
+          `${API_URL}/bookings/delete/${id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

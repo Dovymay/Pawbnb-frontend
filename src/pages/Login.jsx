@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
+import { API_URL } from '../config/config';
 
 const Login = () => {
   const { authenticateUser } = useContext(AuthContext);
@@ -14,10 +15,7 @@ const Login = () => {
     const userToLogin = { email, password };
 
     try {
-      const res = await axios.post(
-        'http://localhost:5005/auth/login',
-        userToLogin
-      );
+      const res = await axios.post(`${API_URL}/auth/login`, userToLogin);
       console.log('Success!', res.data);
       localStorage.setItem('authToken', res.data.authToken);
       await authenticateUser();

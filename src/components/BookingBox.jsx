@@ -3,6 +3,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import { API_URL } from '../config/config';
 
 function BookingBox({ petStay }) {
   const { currentUser, token } = useContext(AuthContext);
@@ -42,7 +43,7 @@ function BookingBox({ petStay }) {
     }
     try {
       await axios.post(
-        'http://localhost:5005/bookings',
+        `${API_URL}/bookings`,
         {
           petStay: petStay._id,
           startDate,

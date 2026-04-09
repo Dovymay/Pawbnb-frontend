@@ -3,6 +3,7 @@ import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import BookingCard from '../components/BookingCard';
+import { API_URL } from '../config/config';
 
 function MyBookings() {
   const { currentUser, token } = useContext(AuthContext);
@@ -18,7 +19,7 @@ function MyBookings() {
       }
       setIsLoading(true);
       try {
-        const response = await axios.get('http://localhost:5005/bookings', {
+        const response = await axios.get(`${API_URL}/bookings`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setBookings(response.data);

@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config/config';
 
 const PetStayContext = createContext();
 
@@ -32,7 +33,7 @@ const PetStayWrapper = ({ children }) => {
   //1. Fetch All PetStays
   const fetchAllStays = async () => {
     try {
-      const response = await axios.get('http://localhost:5005/petstays/');
+      const response = await axios.get(`${API_URL}/petstays/`);
       setPetStays(response.data);
       // console.log(response.data);
 
@@ -47,9 +48,7 @@ const PetStayWrapper = ({ children }) => {
   //1.1 Fetch Featured stays
   const fetchFeaturedStays = async () => {
     try {
-      const response = await axios.get(
-        'http://localhost:5005/petstays/featured'
-      );
+      const response = await axios.get(`${API_URL}/petstays/featured`);
       setFeaturedStays(response.data);
       console.log(response.data);
     } catch (error) {
@@ -60,9 +59,7 @@ const PetStayWrapper = ({ children }) => {
   //1.2 Fetch Filtered stays
   const fetchFilteredStays = async (city) => {
     try {
-      const response = await axios.get(
-        `http://localhost:5005/petstays/location/${city}`
-      );
+      const response = await axios.get(`${API_URL}/petstays/location/${city}`);
       setFilteredStays(response.data);
       return response.data;
       console.log(response.data);
@@ -79,7 +76,7 @@ const PetStayWrapper = ({ children }) => {
   //2. Fetch A Single PetStay
   const fetchSingleStay = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5005/petstays/${id}`);
+      const response = await axios.get(`${API_URL}/petstays/${id}`);
       return response.data;
     } catch (error) {
       console.log(error);

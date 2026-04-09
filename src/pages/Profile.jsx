@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import axios from 'axios';
 import MyBookings from './MyBookings';
+import { API_URL } from '../config/config';
 
 const Profile = () => {
   const [profileUser, setProfileUser] = useState(null);
@@ -15,7 +16,7 @@ const Profile = () => {
         //Get the token for verification
         const theToken = localStorage.getItem('authToken');
         const { data } = await axios.get(
-          `http://localhost:5005/auth/profile/${currentUser._id}`,
+          `${API_URL}/auth/profile/${currentUser._id}`,
           {
             headers: { Authorization: `Bearer ${theToken}` },
           }
