@@ -9,12 +9,12 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
-  const [avatar, setAvatar] = useState('');
+  // const [avatar, setAvatar] = useState('');
   const nav = useNavigate();
 
   async function handleSignup(e) {
     e.preventDefault();
-    const userToSignup = { username, name, email, password, role, avatar };
+    const userToSignup = { username, name, email, password, role };
 
     try {
       const createdUser = await axios.post(
@@ -97,7 +97,7 @@ const Signup = () => {
                     }}
                   />
                 </label>
-                <label className="login-label">
+                {/* <label className="login-label">
                   Image:
                   <input
                     className="login-input"
@@ -108,7 +108,7 @@ const Signup = () => {
                       setAvatar(e.target.value);
                     }}
                   />
-                </label>
+                </label> */}
               </div>
 
               <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-2 py-4 mt-3">
