@@ -18,7 +18,7 @@ const Signup = () => {
 
     try {
       const createdUser = await axios.post(
-        `${API_URL}auth/signup`,
+        `${API_URL}/auth/signup`,
         userToSignup
       );
       console.log('Success!', createdUser);
