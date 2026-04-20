@@ -42,7 +42,7 @@ function BookingBox({ petStay }) {
       return;
     }
     try {
-      await axios.post(
+      const response = await axios.post(
         `${API_URL}/bookings`,
         {
           petStay: petStay._id,
@@ -55,8 +55,8 @@ function BookingBox({ petStay }) {
           },
         }
       );
-      alert('Booking succesful 🐾!');
-      nav('/profile');
+      // alert('Booking succesful 🐾!');
+      nav(`/booking-successful/${response.data._id}`);
     } catch (error) {
       console.log(error);
       alert('Booking failed');
@@ -66,7 +66,7 @@ function BookingBox({ petStay }) {
   return (
     <div className="booking-box bg-surface p-6 rounded-2xl shadow-lg">
       <h3 className="text-xl font-semibold mb-4">
-        €{petStay.pricePerNight}{' '}
+        €{petStay?.pricePerNight}{' '}
         <span className="text-sm text-primary">/night</span>
       </h3>
       <DatePicker
@@ -80,6 +80,7 @@ function BookingBox({ petStay }) {
       <div className="mt-4">
         <p>Total: €{totalPrice}</p>
       </div>
+
       <button
         onClick={handleBooking}
         className="bg-primary/70 hover:bg-primary/100 text-white rounded-xl px-8 py-3 mt-5 mb-5"

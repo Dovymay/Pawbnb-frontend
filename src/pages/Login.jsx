@@ -28,7 +28,11 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen gap-8">
-      <div className="bg-surface p-8 rounded-2xl shadow-lg">
+      <div className="bg-surface py-2 px-10 rounded-2xl shadow-lg m-8">
+        <h1 className="font-bold text-center text-xl mb-4">Login</h1>
+        <p className="text-center text-sm mb-4">
+          Access your account with valid credentials
+        </p>
         <form className="flex flex-col gap-4" onSubmit={handleLogin}>
           <label className="login-label">
             Email:
@@ -55,9 +59,11 @@ const Login = () => {
               }}
             />
           </label>
+
           <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-4 py-2 mt-2">
             Login 🐾
           </button>
+          <p className="text-center text-sm mb-4">Forgot your password?</p>
         </form>
       </div>
     </div>

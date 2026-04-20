@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../config/config';
 
 const Signup = () => {
@@ -32,9 +32,10 @@ const Signup = () => {
     <div>
       <div className="flex justify-center items-center min-h-screen gap-6 my-4">
         <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">
-          <h1 className="font-bold text-center text-xl mb-4">
-            Sign up with us
-          </h1>
+          <h1 className="font-bold text-center text-xl mb-4">Create account</h1>
+          <p className="text-center text-sm mb-4">
+            Sign up to get started with your adventures
+          </p>
           <div>
             <form className="flex flex-col gap-4" onSubmit={handleSignup}>
               <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">
@@ -72,33 +73,32 @@ const Signup = () => {
                     }}
                   />
                 </label>
-              </div>
-
-              <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">
-                <label className="login-label">
-                  Password:
-                  <input
-                    className="login-input"
-                    type="password"
-                    value={password}
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
-                  />
-                </label>
-                <label className="login-label">
-                  Role:
-                  <input
-                    className="login-input"
-                    type="text"
-                    placeholder="Role: user or host?"
-                    value={role}
-                    onChange={(e) => {
-                      setRole(e.target.value);
-                    }}
-                  />
-                </label>
-                {/* <label className="login-label">
+                <div>
+                  <label className="login-label">
+                    Password:
+                    <input
+                      className="login-input"
+                      type="password"
+                      title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                      value={password}
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
+                    />
+                  </label>
+                  <label className="login-label">
+                    Account type:
+                    <input
+                      className="login-input"
+                      type="text"
+                      Title="Available types: user or host."
+                      value={role}
+                      onChange={(e) => {
+                        setRole(e.target.value);
+                      }}
+                    />
+                  </label>
+                  {/* <label className="login-label">
                   Image:
                   <input
                     className="login-input"
@@ -110,11 +110,22 @@ const Signup = () => {
                     }}
                   />
                 </label> */}
+                </div>
               </div>
 
               <button className="bg-border hover:bg-primary/80 text-white rounded-xl px-2 py-4 mt-3">
-                Sign up!
+                Create account
               </button>
+              <div className="flex justify-center gap-5">
+                <p className="text-center text-sm mb-4">
+                  Already have an account?
+                </p>
+                <Link to="/login">
+                  <p className="text-center text-sm mb-4 text-green-400">
+                    Sign In
+                  </p>
+                </Link>
+              </div>
             </form>
           </div>
         </div>

@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import Location from './components/Location';
 import SearchResultsPage from './pages/SearchResultsPage';
 import BookingDetailsPage from './pages/BookingDetailsPage';
+import SuccessPage from './pages/SuccessPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             path="/one-booking/booking/:id"
             element={<BookingDetailsPage />}
           />
+          <Route path="booking-successful/:id" element={<SuccessPage />} />
           <Route path="/location/:city" element={<Location />} />
           <Route path="/onestay/:id" element={<PetStayDetailsPage />} />
           <Route path="/signup" element={<Signup />} />
