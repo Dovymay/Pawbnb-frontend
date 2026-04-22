@@ -109,7 +109,7 @@ const SuccessPage = () => {
               <p>Confirmed</p>
             </div>
             <div className="flex justify-between items-center font-bold text-center text-l">
-              <p>Booking ID:</p>
+              <p>Booking ID: </p>
               <p>{booking._id}</p>
             </div>
           </div>

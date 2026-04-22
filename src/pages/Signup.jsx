@@ -32,10 +32,12 @@ const Signup = () => {
     <div>
       <div className="flex justify-center items-center min-h-screen gap-6 my-4">
         <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">
-          <h1 className="font-bold text-center text-xl mb-4">Create account</h1>
-          <p className="text-center text-sm mb-4">
+          <h1 className="font-bold text-center text-xl mb-4">
+            Create account to get started with your adventures
+          </h1>
+          {/* <p className="text-center text-sm mb-4">
             Sign up to get started with your adventures
-          </p>
+          </p> */}
           <div>
             <form className="flex flex-col gap-4" onSubmit={handleSignup}>
               <div className="bg-surface px-32 py-2 rounded-2xl shadow-lg">

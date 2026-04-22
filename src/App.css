@@ -425,3 +425,48 @@ body {
   border-radius: 10px;
   font-size: 16px;
 }
+
+.success-bh-img {
+  height: 17vh;
+  width: 12vw;
+  margin-top: 30px;
+  margin-left: 150px;
+  margin-bottom: 50px;
+}
+
+.success-bh-text {
+  height: 500px;
+  width: 550px;
+}
+
+.login-input-msg {
+  background-color: #3c4752;
+  color: white;
+  font: 200;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  border-radius: 12px;
+  margin-top: 1px;
+  border: none;
+  outline: none;
+  min-height: 120px;
+  min-width: 350px;
+}
+
+.login-input-bh {
+  background-color: #3c4752;
+  color: white;
+  font: 200;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  border-radius: 12px;
+  margin-top: 1px;
+  border: none;
+  outline: none;
+  height: 35px;
+  width: 350px;
+}

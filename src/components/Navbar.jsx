@@ -51,7 +51,7 @@ const Navbar = () => {
             </button>
           </Link>
 
-          <Link to="/host">
+          <Link to="/become-host">
             <button className="bg-primary/70 hover:bg-primary/100 text-white rounded-xl px-6 py-1 mt-2">
               Become a host🐾
             </button>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthContext';
 import { API_URL } from '../config/config';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const { authenticateUser } = useContext(AuthContext);
@@ -64,6 +65,12 @@ const Login = () => {
             Login 🐾
           </button>
           <p className="text-center text-sm mb-4">Forgot your password?</p>
+          <div className="flex justify-center gap-5">
+            <p className="text-center text-sm mb-4">Not a member yet?</p>
+            <Link to="/signup">
+              <p className="text-center text-sm mb-4 text-green-400">Sign up</p>
+            </Link>
+          </div>
         </form>
       </div>
     </div>

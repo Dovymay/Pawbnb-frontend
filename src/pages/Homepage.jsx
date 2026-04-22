@@ -71,7 +71,7 @@ const Homepage = () => {
           <h2 className="title-3">Become a Host. Start earning with Pawbnb</h2>
         </div>
         <div className="flex justify-center">
-          <Link to="/host">
+          <Link to="/become-host">
             <button className="bg-primary/70 hover:bg-primary/100 text-white rounded-xl px-8 py-3 mb-0">
               List Your Place🐾
             </button>

@@ -14,6 +14,7 @@ import Location from './components/Location';
 import SearchResultsPage from './pages/SearchResultsPage';
 import BookingDetailsPage from './pages/BookingDetailsPage';
 import SuccessPage from './pages/SuccessPage';
+import BecomeHostPage from './pages/BecomeHostPage';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/location/:city" element={<Location />} />
           <Route path="/onestay/:id" element={<PetStayDetailsPage />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/become-host" element={<BecomeHostPage/>}/>
           <Route path="/login" element={<Login />} />
           <Route
             path="/profile"
